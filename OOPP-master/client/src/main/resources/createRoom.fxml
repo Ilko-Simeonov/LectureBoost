@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="960.0" style="-fx-background-color: #62c6e2;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nl.tudelft.oopp.demo.controllers.CreateRoomController">
+    <children>
+        <Pane layoutX="303.0" layoutY="68.0" prefHeight="405.0" prefWidth="355.0" style="-fx-background-color: white; -fx-border-color: #00a6d6; -fx-border-width: 5;">
+            <children>
+                <Pane prefHeight="60.0" prefWidth="355.0" style="-fx-background-color: #00a6d6;">
+                    <children>
+                        <Label layoutX="6.0" layoutY="-1.0" prefHeight="60.0" prefWidth="349.0" text="New room" textFill="WHITE">
+                            <font>
+                                <Font name="Trebuchet MS Bold" size="40.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+                <Button fx:id="createButton" layoutX="78.0" layoutY="319.0" mnemonicParsing="false" onAction="#createRoom" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #00a6d6; -fx-border-color: black; -fx-border-width: 2; -fx-border-radius: 20; -fx-background-radius: 20;" text="CREATE" textFill="WHITE">
+                    <font>
+                        <Font name="Trebuchet MS Bold" size="24.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Label layoutX="14.0" layoutY="79.0" text="Name" textFill="#00a6d6">
+                    <font>
+                        <Font name="Trebuchet MS Bold" size="16.0" />
+                    </font>
+                </Label>
+                <Label layoutX="14.0" layoutY="124.0" text="Moderator password" textFill="#00a6d6">
+                    <font>
+                        <Font name="Trebuchet MS Bold" size="16.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="roomName" layoutX="63.0" layoutY="77.0" prefHeight="0.0" prefWidth="165.0">
+                    <font>
+                        <Font name="Trebuchet MS" size="14.0" />
+                    </font>
+                </TextField>
+                <TextField fx:id="moderatorPassword" layoutX="170.0" layoutY="121.0" prefHeight="25.0" prefWidth="165.0">
+                    <font>
+                        <Font name="Trebuchet MS" size="14.0" />
+                    </font>
+                </TextField>
+                <Label layoutX="14.0" layoutY="171.0" text="Schedule" textFill="#00a6d6">
+                    <font>
+                        <Font name="Trebuchet MS Bold" size="16.0" />
+                    </font>
+                </Label>
+                <Button fx:id="generateRandomPassword" layoutX="228.0" layoutY="147.0" onAction="#generateModeratorPassword" style="-fx-background-color: transparent;" text="Generate random">
+                    <font>
+                        <Font name="Trebuchet MS" size="12.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <ToggleButton fx:id="scheduleOn" layoutX="132.0" layoutY="169.0" onAction="#showSchedule" prefHeight="25.0" prefWidth="42.0" style="-fx-background-color: white;" text="ON" textFill="#00a6d6">
+                    <font>
+                        <Font name="Trebuchet MS Bold" size="12.0" />
+                    </font>
+                    <toggleGroup>
+                        <ToggleGroup fx:id="toggleSchedule" />
+                    </toggleGroup>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </ToggleButton>
+                <ToggleButton fx:id="scheduleOff" layoutX="90.0" layoutY="169.0" onAction="#hideSchedule" prefHeight="25.0" prefWidth="42.0" selected="true" style="-fx-background-color: #00a6d6;" text="OFF" textFill="WHITE" toggleGroup="$toggleSchedule">
+                    <font>
+                        <Font name="Trebuchet MS Bold" size="12.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                    </cursor>
+                </ToggleButton>
+                <TextField fx:id="errorLabel" editable="false" layoutX="1.0" layoutY="369.0" prefWidth="355.0" style="-fx-text-fill: red; -fx-background-color: transparent; -fx-background-insets: 0px;" />
+            <CheckBox fx:id="openRoomCB" layoutX="212.0" layoutY="293.0" mnemonicParsing="false" textAlignment="RIGHT" textFill="#00a6d6">
+               <font>
+                  <Font name="Trebuchet MS Bold" size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </CheckBox>
+            <Label fx:id="openRoomLabel" layoutX="124.0" layoutY="294.0" text="Open room " textFill="#00a6d6">
+               <font>
+                  <Font name="Trebuchet MS Bold" size="16.0" />
+               </font>
+            </Label>
+            <Pane fx:id="schedulePane" layoutX="74.0" layoutY="204.0" prefHeight="93.0" prefWidth="200.0" visible="false">
+               <children>
+                   <DatePicker fx:id="schedule" layoutX="13.0" layoutY="2.0" />
+                   <Label layoutX="12.0" layoutY="32.0" text="From" textFill="#00a6d6">
+                       <font>
+                           <Font name="Trebuchet MS Bold" size="16.0" />
+                       </font>
+                   </Label>
+                  <Spinner fx:id="startHourSpinner" layoutX="62.0" layoutY="32.0" prefHeight="25.0" prefWidth="55.0">
+                      <valueFactory>
+                          <SpinnerValueFactory.IntegerSpinnerValueFactory max="23" min="0" wrapAround="true" />
+                      </valueFactory>
+                  </Spinner>
+                   <Label layoutX="122.0" layoutY="30.0" text=":" textFill="#00a6d6">
+                       <font>
+                           <Font name="Trebuchet MS Bold" size="20.0" />
+                       </font>
+                   </Label>
+                   <Spinner fx:id="startMinSpinner" layoutX="132.0" layoutY="32.0" prefHeight="25.0" prefWidth="55.0">
+                       <valueFactory>
+                           <SpinnerValueFactory.IntegerSpinnerValueFactory amountToStepBy="5" max="59" min="0" wrapAround="true" />
+                       </valueFactory>
+                   </Spinner>
+                   <Label layoutX="12.0" layoutY="60.0" text="To" textFill="#00a6d6">
+                       <font>
+                           <Font name="Trebuchet MS Bold" size="16.0" />
+                       </font>
+                   </Label>
+                   <Spinner fx:id="endHourSpinner" layoutX="62.0" layoutY="60.0" prefHeight="25.0" prefWidth="55.0">
+                       <valueFactory>
+                           <SpinnerValueFactory.IntegerSpinnerValueFactory max="23" min="0" wrapAround="true" />
+                       </valueFactory>
+                   </Spinner>
+                   <Label layoutX="122.0" layoutY="58.0" text=":" textFill="#00a6d6">
+                       <font>
+                           <Font name="Trebuchet MS Bold" size="20.0" />
+                       </font>
+                   </Label>
+                   <Spinner fx:id="endMinSpinner" layoutX="132.0" layoutY="60.0" prefHeight="25.0" prefWidth="55.0">
+                       <valueFactory>
+                           <SpinnerValueFactory.IntegerSpinnerValueFactory amountToStepBy="5" max="59" min="0" wrapAround="true" />
+                       </valueFactory>
+                   </Spinner>
+               </children>
+            </Pane>
+            </children>
+        </Pane>
+        <Button fx:id="backButton" layoutX="303.0" layoutY="479.0" mnemonicParsing="false" onAction="#backToMainMenu" prefHeight="9.0" prefWidth="73.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 2; -fx-border-radius: 20; -fx-background-radius: 20;" text="BACK">
+            <font>
+                <Font name="Trebuchet MS Bold" size="14.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+    </children>
+</AnchorPane>

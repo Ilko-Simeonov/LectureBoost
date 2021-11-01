@@ -1,0 +1,54 @@
+Test Manual /NAME/ Application
+
+This is the test manual for the GUI logic tests. The test consists of two parts;
+1. The automated tests in the IDE;
+2. The manual tests in the application.
+
+
+Part I: The automated tests
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+1. Run the demoApplication in the server/src/main/java/nl.tudelft.oopp.demo/util folder
+2. Go to the client/src/test/nl.tudelft.oopp.demo/controllers folder
+
+There are 4 test suites currently in this folder.
+3. Remove all the /* */ in those test suites
+4. Run all the tests and confirm test results
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Part II: Manual testing
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+1. Run the demoApplication in the server/src/java.nl.tudelft.oopp.demo/util folder
+2. Run the homeApp in the client/src/main/java/nl.tudelft.oopp.demo/views
+3. Click on the create room button
+4. Click on the create button and confirm error String: "You have to fill in the room name!"
+5. Fill in Name textField "Room1", click on create and confirm error String: "You have to fill in the moderator password!"
+6. Fill in Name textField "Room1", fill in Moderator password textField "testPass", click on create and confirm String: "Room created with url: xxxxxxxxxx"
+7. Fill in Name textField "Room1", click on generate random, click on create and confirm String: "Room created with url: xxxxxxxxxx"
+8. Fill in Name textField "Room1", click on generate random, click on Open room, click on create and confirm sceneswitch (Note the generated String down)
+9. Confirm the following: Top left label "Lecturer", top label "Room1" , person icon has "1", bottom left label having a random String (Note this String down)
+10. Fill in textField in bottom "Test?", click on arrow icon and confirm pane showing up.
+11. Click on green arrow button and confirm number is 1
+12. Click on checkbox and confirm disappearance of pane
+13. Fill in textField in bottom "Test?", click on arrow icon and confirm pane showing up.
+14. Fill in textField in bottom "Test1?", click on arrow icon and confirm pane showing up.
+15. Fill in textField in bottom "Test2?", click on arrow icon and confirm pane showing up.
+16. Click on the three dots icon, click on delete and confirm pane disappearance.
+17. Click on "TOP QUESTION", confirm menu has 4 panes with the one on top having 1 upvote
+18. Click on "ANSWERED QUESTION", confirm menu has 1 pane
+19. Click on "POLLS", click on plus sign and confirm menu popping up
+20. Fill in title textField "Poll1", option 1 textField "What?", option 2 textField "How?", click on create and confirm menu changing
+21. Click on LEAVE ROOM and confirm menu changing
+22. Click on Join room button and confirm scene change
+23. Click on Join and confirm errorLabel : "You have to fill in the room url!"
+24. Fill in ROOM CODE textField with the noted down String, click on Join and confirm errorLabel: "You have to fill in your nickname!"
+25. Fill in ROOM CODE textField with the noted down String, fill in NICKNAME textField "Student1", click on Join and confirm scene switch.
+26. Confirm top label "Student1"
+27. Leave the room
+28. Click on manage room button
+29. Click on choose and confirm errorLabel: "You have to fill in the room url!"
+30. Fill in ROOM CODE textFiel with the noted down String, click on choose and confirm errorLabel: "You have to fill the moderator password!"
+31. Fill in ROOM CODE textFiel with the noted down String, fill in the other textField with the moderator String, click on choose and confirm scene switch.
+32. Click on edit and confirm label: "The changes have been made to room "Room1"!
+33. Go back 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+This concludes the tests

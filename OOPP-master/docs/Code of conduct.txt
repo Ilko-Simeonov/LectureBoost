@@ -1,0 +1,25 @@
+Code of conduct:
+•	This code of conduct should never be disobeyed. Instead, if anyone, at any point disagrees with the code of conduct, all 5 group members discuss together, and we will adjust the code of conduct only if at least 4 out of 5 people agree with the change. 
+•	If something bothers you, say something about it right away. 
+•	Try to phrase things in a more suggestive way (so say “Could you try doing ...” instead of “You’re doing this wrong, it should be like ...”) 
+•	You don’t have to agree with other people’s suggestions, but if you disagree with someone’s suggestion, also discuss it straight away.
+•	Don’t be afraid of asking for help. Whether it is because you don’t understand, something, or if you can’t finish on time, or any other reason.
+•	Big decisions should be made on the basis of majority. 
+•	Every merge should be reviewed by another group member.
+•	The master branch should only contain working versions of the project.
+•	Every branch is focussed on one issue, also meaning every issue has it’s own branch.
+•	Always stick to the backlog. If you have a suggestion, discuss with the group, and then it might be added to the backlog, only then can it be implemented.
+•	Every branch has a deadline (granted that no new issues are found), deadlines are always decided with 2 or 3 people, depending on the size of the issue. If a new issue is found while working on another issue, the deadline can be postponed to account for this, but again, the new deadline is decided by 2 or 3 people.
+•	Attempt to keep it to 1 person per branch. (Obviously not possible for bigger issues).
+•	We will document how everyone styles their code, and everyone should stick to that.
+•	Commit messages and merge messages should always be clear and document the changes made in that commit/branch.
+•	Merge requests can only be approved by the ones responsible, but the author must be the one to actually confirm the merge.
+
+
+Made by, and agreed on by:
+	Casper Dekeling
+	Chen Qi Huang
+	Gerrit Croes
+	Ilko Simeonov
+	Markus Orav
+

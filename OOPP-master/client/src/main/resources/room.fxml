@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="540.0" prefWidth="960.0" style="-fx-background-color: #62c6e2;" stylesheets="@stylesheets/room.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nl.tudelft.oopp.demo.controllers.RoomController">
+   <children>
+      <AnchorPane fx:id="helpTab" prefHeight="540.0" prefWidth="960.0">
+         <children>
+            <Pane layoutX="50.0" layoutY="25.0" prefHeight="490.0" prefWidth="860.0" style="-fx-background-color: white; -fx-border-color: #00a6d6; -fx-border-width: 5; -fx-background-radius: 45; -fx-border-radius: 40;">
+               <children>
+                  <ImageView fitHeight="40.0" fitWidth="50.0" layoutX="800.0" layoutY="14.0" onMouseClicked="#closeHelp" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/close.jpg" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <Label layoutX="120.0" layoutY="71.0" prefHeight="25.0" prefWidth="620.0" text="OPEN QUESTIONS: shows all unanswered questions." textFill="#00a6d6" wrapText="true">
+                     <font>
+                        <Font name="Trebuchet MS" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="120.0" layoutY="113.0" prefHeight="76.0" prefWidth="620.0" text="TOP QUESTIONS: shows unanswered questions ordered by the amount of upvotes. You can change the number of questions shown on this tab from    ." textAlignment="JUSTIFY" textFill="#00a6d6" wrapText="true">
+                     <font>
+                        <Font name="Trebuchet MS" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="120.0" layoutY="199.0" prefHeight="82.0" prefWidth="620.0" text="ANSWERED QUESTIONS: shows all answered questions with their answers, if they have any. You can download a CSV file of these questions by clicking the     button in the top right menu." textAlignment="JUSTIFY" textFill="#00a6d6" wrapText="true">
+                     <font>
+                        <Font name="Trebuchet MS" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="120.0" layoutY="282.0" prefHeight="76.0" prefWidth="620.0" text="POLLS: students can answer moderator-made polls. You can only answer once on every poll." textAlignment="JUSTIFY" textFill="#00a6d6" wrapText="true">
+                     <font>
+                        <Font name="Trebuchet MS" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="120.0" layoutY="348.0" prefHeight="76.0" prefWidth="620.0" text="GIVE FEEDBACK: let the lecturer know if they are going too slow, too fast or is the tempo just right." textAlignment="JUSTIFY" textFill="#00a6d6" wrapText="true">
+                     <font>
+                        <Font name="Trebuchet MS" size="20.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="30.0" fitWidth="18.0" layoutX="273.0" layoutY="168.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/settings.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="18.0" layoutX="348.0" layoutY="258.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/download_csv.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="27.0" fitWidth="20.0" layoutX="700.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icons/person.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="peopleCount" layoutX="717.0" layoutY="4.0" text="0">
+         <font>
+            <Font name="Trebuchet MS Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="roomNameLabel" layoutX="166.0" layoutY="6.0" text="Room name">
+         <font>
+            <Font name="Trebuchet MS Bold" size="14.0" />
+         </font>
+      </Label>
+      <AnchorPane fx:id="settingsTab" prefHeight="540.0" prefWidth="960.0">
+         <children>
+            <Pane layoutX="50.0" layoutY="25.0" prefHeight="490.0" prefWidth="860.0" style="-fx-background-color: white; -fx-border-color: #00a6d6; -fx-border-width: 5; -fx-background-radius: 45; -fx-border-radius: 40;">
+               <children>
+                  <ImageView fitHeight="40.0" fitWidth="50.0" layoutX="800.0" layoutY="14.0" onMouseClicked="#closeSettings" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/close.jpg" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <Label layoutX="269.0" layoutY="130.0" text="Change nickname" textFill="#00a6d6">
+                     <font>
+                        <Font name="Trebuchet MS Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="changeNickname" layoutX="425.0" layoutY="124.0" text="Nickname">
+                     <font>
+                        <Font name="Trebuchet MS" size="18.0" />
+                     </font></TextField>
+                  <Label layoutX="229.0" layoutY="198.0" text="Top questions amount" textFill="#00a6d6">
+                     <font>
+                        <Font name="Trebuchet MS Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="topQuestionsAmountTF" layoutX="425.0" layoutY="196.0" prefHeight="25.0" prefWidth="50.0" text="5" />
+                  <Label layoutX="324.0" layoutY="272.0" text="Slow mode" textFill="#00a6d6">
+                     <font>
+                        <Font name="Trebuchet MS Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="195.0" layoutY="344.0" text="Feedback reset (seconds) " textFill="#00a6d6">
+                     <font>
+                        <Font name="Trebuchet MS Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="704.0" layoutY="433.0" mnemonicParsing="false" onAction="#applyChanges" prefHeight="15.0" prefWidth="130.0" style="-fx-background-color: #00a6d6; -fx-border-color: black; -fx-border-width: 2; -fx-border-radius: 20; -fx-background-radius: 20;" text="APPLY" textFill="WHITE">
+                     <font>
+                        <Font name="Trebuchet MS Bold" size="20.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <ToggleButton fx:id="slowModeOff" layoutX="426.0" layoutY="270.0" onAction="#hideCooldown" prefHeight="25.0" prefWidth="42.0" selected="true" style="-fx-background-color: #00a6d6;" text="OFF" textFill="WHITE">
+                     <font>
+                        <Font name="Trebuchet MS Bold" size="12.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="slowMode" />
+                     </toggleGroup>
+                  </ToggleButton>
+                  <ToggleButton fx:id="slowModeOn" layoutX="468.0" layoutY="270.0" onAction="#showCooldown" prefHeight="25.0" prefWidth="42.0" style="-fx-background-color: white;" text="ON" textFill="#00a6d6" toggleGroup="$slowMode">
+                     <font>
+                        <Font name="Trebuchet MS Bold" size="12.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ToggleButton>
+                  <TextField fx:id="feedbackResetTF" layoutX="421.0" layoutY="342.0" prefHeight="25.0" prefWidth="50.0" text="120" />
+                  <Label fx:id="questionCooldownLabel" layoutX="541.0" layoutY="272.0" text="Cooldown (seconds)" textFill="#00a6d6" visible="false">
+                     <font>
+                        <Font name="Trebuchet MS Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="questionCooldownTF" layoutX="719.0" layoutY="270.0" prefHeight="25.0" prefWidth="50.0" text="120" visible="false" />
+                  <Label fx:id="errorLabel" layoutX="426.0" layoutY="157.0" text="This nickname is already taken :(" textFill="RED" visible="false">
+                     <font>
+                        <Font name="Trebuchet MS" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+      <Pane fx:id="giveFeedbackTab" layoutX="160.0" layoutY="25.0" prefHeight="515.0" prefWidth="800.0" style="-fx-background-color: #62c6e2;" />
+      <Pane fx:id="answeredQuestionsTab" layoutX="160.0" layoutY="25.0" prefHeight="515.0" prefWidth="800.0" style="-fx-background-color: #62c6e2;">
+         <children>
+            <ScrollPane hbarPolicy="NEVER" prefHeight="453.0" prefWidth="800.0" style="-fx-background-color: #62c6e2;" vbarPolicy="NEVER">
+               <content>
+                  <VBox fx:id="answeredQuestions" prefHeight="1073.0" prefWidth="798.0" spacing="5.0" style="-fx-background-color: #62c6e2;">
+                     <padding>
+                        <Insets left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </VBox>
+               </content>
+            </ScrollPane>
+         </children>
+      </Pane>
+      <ButtonBar layoutX="829.0" prefHeight="25.0" prefWidth="91.0">
+
+         <buttons>
+            <ImageView fx:id="downloadCsvButton" accessibleRole="BUTTON" fitHeight="20.0" fitWidth="20.0" onMouseClicked="#downloadCsv" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@icons/download_csv.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="settingsButton" accessibleRole="BUTTON" fitHeight="20.0" fitWidth="20.0" onMouseClicked="#openSettings" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icons/settings.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="helpButton" accessibleRole="BUTTON" fitHeight="20.0" fitWidth="20.0" onMouseClicked="#openHelp" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icons/help.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="refreshButton" accessibleRole="BUTTON" fitHeight="20.0" fitWidth="20.0" onMouseClicked="#handleRefreshButtonClick" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icons/refresh.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </buttons>
+      </ButtonBar>
+      <Pane fx:id="topQuestionsTab" layoutX="160.0" layoutY="25.0" prefHeight="515.0" prefWidth="800.0" style="-fx-background-color: #62c6e2;">
+         <children>
+            <ScrollPane hbarPolicy="NEVER" prefHeight="453.0" prefWidth="800.0" style="-fx-background-color: #62c6e2;" vbarPolicy="NEVER">
+            <VBox fx:id="presenterMode" prefHeight="515.0" prefWidth="800.0" spacing="3.0" style="-fx-background-color: #62c6e2;">
+               <padding>
+                  <Insets left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </VBox>
+            </ScrollPane>
+         </children>
+      </Pane>
+      <Pane fx:id="pollTab" layoutX="160.0" layoutY="25.0" prefHeight="515.0" prefWidth="800.0" style="-fx-background-color: #62c6e2; -fx-border-color: white; -fx-border-width: 2 0 0 0;">
+         <children>
+            <ScrollPane prefHeight="515.0" prefWidth="800.0" style="-fx-background-color: #62c6e2;" vbarPolicy="NEVER">
+               <content>
+                  <HBox fx:id="pollcontainer" prefHeight="1073.0" prefWidth="798.0" style="-fx-background-color: red; -fx-border-color: white; -fx-border-width: 2 0 0 0;">
+                     <children>
+                        <VBox fx:id="polls" prefHeight="200.0" prefWidth="500.0" spacing="10.0" style="-fx-background-color: #62c6e2;">
+                           <padding>
+                              <Insets left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <children>
+                              <Pane prefHeight="22.0" prefWidth="479.0">
+                                 <children>
+                                    <Label style="-fx-text-fill: white;" text="Polls:">
+                                       <font>
+                                          <Font name="Trebuchet MS Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="createPollButton" fitHeight="25.0" fitWidth="25.0" layoutX="454.0" layoutY="-1.0" onMouseClicked="#createNewPollLayout" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@icons/add.png" />
+                                       </image>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ImageView>
+                                 </children>
+                              </Pane>
+                           </children></VBox>
+                        <VBox fx:id="pollResults" prefHeight="200.0" prefWidth="300.0" spacing="10.0" style="-fx-background-color: #62c6e2; -fx-border-color: white; -fx-border-width: 0 0 0 2;">
+                           <padding>
+                              <Insets left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <children>
+                              <Label style="-fx-text-fill: white;" text="Results:">
+                                 <font>
+                                    <Font name="Trebuchet MS Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children></VBox>
+                     </children>
+                  </HBox>
+               </content>
+            </ScrollPane>
+         </children></Pane>
+      <Pane prefHeight="540.0" prefWidth="160.0" style="-fx-background-color: #00a6d6;">
+         <children>
+            <Label fx:id="nicknameLabel" layoutX="7.0" layoutY="4.0" text="Nickname" textFill="WHITE">
+               <font>
+                  <Font name="Trebuchet MS Bold" size="22.0" />
+               </font>
+            </Label>
+            <VBox layoutY="50.0" prefHeight="200.0" prefWidth="160.0">
+               <children>
+                  <ToggleButton fx:id="openQuestionsButton" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#showOpenQuestions" onMouseEntered="#hoverOpenStart" onMouseExited="#hoverOpenEnd" prefHeight="40.0" prefWidth="160.0" selected="true" style="-fx-background-color: #62c6e2;" text="OPEN QUESTIONS" textFill="WHITE">
+                     <font>
+                        <Font name="Trebuchet MS Bold" size="12.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="leftSideMenu" />
+                     </toggleGroup>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                  </ToggleButton>
+                  <ToggleButton fx:id="topQuestionsButton" alignment="CENTER_LEFT" layoutX="10.0" layoutY="50.0" mnemonicParsing="false" onAction="#showTopQuestions" onMouseEntered="#hoverTopStart" onMouseExited="#hoverTopEnd" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #00a6d6;" text="TOP QUESTIONS" textFill="WHITE" toggleGroup="$leftSideMenu">
+                     <font>
+                        <Font name="Trebuchet MS Bold" size="12.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ToggleButton>
+                  <ToggleButton fx:id="answeredQuestionsButton" alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#showAnsweredQuestions" onMouseEntered="#hoverAnsweredStart" onMouseExited="#hoverAnsweredEnd" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #00a6d6;" text="ANSWERED QUESTIONS" textFill="WHITE" toggleGroup="$leftSideMenu">
+                     <font>
+                        <Font name="Trebuchet MS Bold" size="12.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ToggleButton>
+                  <ToggleButton fx:id="pollButton" alignment="CENTER_LEFT" layoutX="10.0" layoutY="50.0" mnemonicParsing="false" onAction="#showPolls" onMouseEntered="#hoverPollsStart" onMouseExited="#hoverPollsEnd" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #00a6d6;" text="POLLS" textFill="WHITE" toggleGroup="$leftSideMenu">
+                     <font>
+                        <Font name="Trebuchet MS Bold" size="12.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ToggleButton>
+                  <ToggleButton fx:id="giveFeedbackButton" alignment="CENTER_LEFT" layoutX="10.0" layoutY="50.0" mnemonicParsing="false" onAction="#showFeedbackOptions" onMouseEntered="#hoverFeedbackStart" onMouseExited="#hoverFeedbackEnd" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #00a6d6;" text="GIVE FEEDBACK" textFill="WHITE" toggleGroup="$leftSideMenu">
+                     <font>
+                        <Font name="Trebuchet MS Bold" size="12.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ToggleButton>
+               </children>
+            </VBox>
+            <Button fx:id="leaveRoomButton" layoutX="5.0" layoutY="505.0" mnemonicParsing="false" onAction="#backToMainMenu" prefHeight="26.0" prefWidth="109.0" style="-fx-background-color: red; -fx-border-color: black; -fx-border-width: 2; -fx-border-radius: 20; -fx-background-radius: 20;" text="LEAVE ROOM" textFill="WHITE">
+               <font>
+                  <Font name="Trebuchet MS Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <TextField fx:id="roomCodeLabel" editable="false" layoutY="473.0" prefHeight="32.0" prefWidth="160.0" style="-fx-text-fill:white; -fx-background-color: transparent;" text="Room code">
+               <font>
+                  <Font name="Trebuchet MS Bold" size="16.0" />
+               </font>
+            </TextField>
+         </children></Pane>
+      <Pane fx:id="openQuestionsTab" layoutX="160.0" layoutY="25.0" prefHeight="515.0" prefWidth="800.0" style="-fx-background-color: #62c6e2;">
+         <children>
+            <ScrollPane hbarPolicy="NEVER" prefHeight="453.0" prefWidth="800.0" style="-fx-background-color: #62c6e2;" vbarPolicy="NEVER">
+               <content>
+                  <VBox fx:id="questions" prefHeight="1073.0" prefWidth="798.0" spacing="5.0" style="-fx-background-color: #62c6e2;">
+                     <padding>
+                        <Insets left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </VBox>
+               </content>
+            </ScrollPane>
+            <TextArea fx:id="questionBox" layoutX="6.0" layoutY="460.0" prefHeight="50.0" prefWidth="788.0" promptText="ASK YOUR QUESTION" style="-fx-vbar-policy: never" wrapText="true">
+               <padding>
+                  <Insets right="50.0" />
+               </padding>
+            </TextArea>
+            <Label fx:id="timerLabel" alignment="CENTER" layoutX="9.0" layoutY="464.0" prefHeight="42.0" prefWidth="782.0" text="30" visible="false">
+               <font>
+                  <Font name="Trebuchet MS Bold" size="36.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="sendButton" accessibleRole="BUTTON" fitHeight="50.0" fitWidth="51.0" layoutX="743.0" layoutY="460.0" onMouseClicked="#addQuestion" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icons/send.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

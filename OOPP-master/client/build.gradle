@@ -1,0 +1,80 @@
+plugins {
+    id 'org.openjfx.javafxplugin' version '0.0.8'
+}
+
+mainClassName = "nl.tudelft.oopp.demo.MainApp"
+
+dependencies {
+    // https://mvnrepository.com/artifact/org.glassfish.jersey.core/jersey-client
+    implementation group: 'org.glassfish.jersey.core', name: 'jersey-client', version: '3.0.1'
+
+    // https://mvnrepository.com/artifact/org.glassfish.jersey.inject/jersey-hk2
+    implementation group: 'org.glassfish.jersey.inject', name: 'jersey-hk2', version: '3.0.1'
+
+    // https://mvnrepository.com/artifact/org.glassfish.jersey.media/jersey-media-json-jackson
+    implementation group: 'org.glassfish.jersey.media', name: 'jersey-media-json-jackson', version: '3.0.1'
+
+    implementation 'org.apache.commons:commons-csv:1.8'
+
+    // https://mvnrepository.com/artifact/com.google.code.gson/gson
+    implementation group: 'com.google.code.gson', name: 'gson', version: '2.8.6'
+
+    testImplementation 'org.mockito:mockito-inline:3.7.7'
+    testImplementation 'org.mockito:mockito-junit-jupiter:3.7.7'
+
+    testCompile "org.testfx:testfx-junit:4.0.+"
+    testCompile "org.testfx:testfx-core:4.0.16-alpha"
+
+    testCompile("org.junit.jupiter:junit-jupiter-api:5.6.0")
+    testRuntime("org.junit.jupiter:junit-jupiter-engine:5.6.0")
+
+    testCompile( 'com.google.guava:guava:14.0.1')
+
+    testCompile group: 'org.hamcrest', name: 'hamcrest', version: '2.2'
+    compile group: 'org.loadui', name: 'testFx', version: '3.1.2'
+
+    testCompile "org.testfx:openjfx-monocle:jdk-12.0.1+2"
+
+    testCompile( 'com.google.guava:guava:14.0.1')
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-java',
+            version: '3.141.59'
+    testCompile group: 'io.cucumber', name: 'cucumber-junit', version: '5.6.0'
+    compile group: 'io.cucumber', name: 'cucumber-java', version: '5.6.0'
+    testImplementation("io.github.bonigarcia:webdrivermanager:4.3.1")
+
+    // https://mvnrepository.com/artifact/ch.qos.logback/logback-classic
+    testImplementation group: 'ch.qos.logback', name: 'logback-classic', version: '0.9.26'
+
+    // https://mvnrepository.com/artifact/org.springframework/spring-test
+    testImplementation group: 'org.springframework', name: 'spring-test', version: '5.3.5'
+
+    // https://mvnrepository.com/artifact/org.springframework/spring-context
+    implementation group: 'org.springframework', name: 'spring-context', version: '5.3.5'
+
+    // https://mvnrepository.com/artifact/org.springframework/spring-web
+    implementation group: 'org.springframework', name: 'spring-web', version: '5.3.5'
+
+    compile group: 'org.springframework.boot', name: 'spring-boot-test', version: '2.4.4'
+
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-test-autoconfigure
+    implementation group: 'org.springframework.boot', name: 'spring-boot-test-autoconfigure', version: '2.4.4'
+
+    testImplementation("org.mock-server:mockserver-netty:5.11.2")
+
+    // https://mvnrepository.com/artifact/org.mock-server/mockserver-core
+    implementation group: 'org.mock-server', name: 'mockserver-core', version: '5.11.2'
+
+    // https://mvnrepository.com/artifact/org.mock-server/mockserver-client-java
+    implementation group: 'org.mock-server', name: 'mockserver-client-java', version: '5.11.2'
+
+    // https://mvnrepository.com/artifact/org.mock-server/mockserver-spring-test-listener
+    implementation group: 'org.mock-server', name: 'mockserver-spring-test-listener', version: '5.11.2'
+
+
+}
+
+
+javafx {
+    version = "13"
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
+}

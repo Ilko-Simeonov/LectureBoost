@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="524.0" prefWidth="886.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nl.tudelft.oopp.demo.controllers.TestSceneController">
+   <children>
+      <ListView fx:id="questionList" layoutX="6.0" layoutY="7.0" prefHeight="235.0" prefWidth="873.0" />
+      <TextField fx:id="createTextFieldUrl" layoutX="181.0" layoutY="278.0" promptText="room url" />
+      <Button layoutX="206.0" layoutY="334.0" mnemonicParsing="false" onAction="#createQuestion" text="Create Question" />
+      <Button layoutX="35.0" layoutY="309.0" mnemonicParsing="false" onAction="#getQuestions" text="Get All Questions" />
+      <TextField fx:id="createTextFieldQuestion" layoutX="181.0" layoutY="253.0" promptText="question" />
+      <TextField fx:id="getTextFieldUrl" layoutX="14.0" layoutY="265.0" promptText="room url" />
+      <TextField fx:id="deleteTextFieldId" layoutX="343.0" layoutY="254.0" promptText="Question ID" />
+      <Button layoutX="367.0" layoutY="309.0" mnemonicParsing="false" onAction="#deleteQuestion" text="Delete Question" />
+      <TextField fx:id="upvoteTextFieldId" layoutX="508.0" layoutY="254.0" promptText="Question ID" />
+      <Button layoutX="530.0" layoutY="309.0" mnemonicParsing="false" onAction="#upvote" text="Upvote Question" />
+      <TextField fx:id="getOrderedTextFieldUrl" layoutX="673.0" layoutY="266.0" promptText="room url" />
+      <Button layoutX="678.0" layoutY="309.0" mnemonicParsing="false" onAction="#getQuestionsOrdered" text="Get Questions Ordered" />
+      <TextField fx:id="createRoomName" layoutX="14.0" layoutY="367.0" promptText="Room name" />
+      <CheckBox fx:id="createRoomOpen" layoutX="61.0" layoutY="425.0" mnemonicParsing="false" text="Open?" />
+      <Button layoutX="48.0" layoutY="446.0" mnemonicParsing="false" onAction="#createRoom" text="Create Room" />
+      <Button layoutX="218.0" layoutY="433.0" mnemonicParsing="false" onAction="#getRooms" text="Get Rooms" />
+      <Button layoutX="375.0" layoutY="433.0" mnemonicParsing="false" onAction="#deleteRoom" text="Delete Room" />
+      <TextField fx:id="deleteRoomId" layoutX="344.0" layoutY="380.0" promptText="Room ID" />
+      <TextField fx:id="openRoomId" layoutX="508.0" layoutY="380.0" promptText="Room ID" />
+      <Button layoutX="542.0" layoutY="421.0" mnemonicParsing="false" onAction="#openRoom" text="Open Room" />
+      <Button layoutX="543.0" layoutY="446.0" mnemonicParsing="false" onAction="#closeRoom" text="Close Room" />
+      <Button layoutX="674.0" layoutY="334.0" mnemonicParsing="false" onAction="#getQuestionsAnswered" text="Get Answered Questions" />
+      <Button layoutX="502.0" layoutY="334.0" mnemonicParsing="false" onAction="#markAsAnswered" text="Mark Question as answered" />
+      <Button layoutX="17.0" layoutY="334.0" mnemonicParsing="false" onAction="#getQuestionsAnswered" text="Get Answered Questions" />
+      <TextField fx:id="modPasswordTextField" layoutX="14.0" layoutY="393.0" promptText="Moderator Password" />
+      <TextField fx:id="nidTextField" layoutX="182.0" layoutY="303.0" promptText="nickname id" />
+      <TextField fx:id="nidDelTextField" layoutX="343.0" layoutY="279.0" promptText="Your Nickname ID" />
+      <TextField fx:id="nidAnswerTextField" layoutX="508.0" layoutY="279.0" promptText="Your Nickname ID" />
+   </children>
+</AnchorPane>

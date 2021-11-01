@@ -1,0 +1,58 @@
+Product Backlog
+Must have:
+As a lecturer, I want to create a room, so that all the students can be grouped together in that room
+As a lecturer, I want to invite students by sending them a link to the room, so that they can ask their questions there.
+As a lecturer, I want to delete questions, so that they are removed when I have answered them. 
+As a lecturer, I want the chat to be sorted in a smart way, so that I can prioritise the more urgent questions.
+As a lecturer, I want to close a room, so that students can no longer ask questions.
+As a lecturer, I want to have an easy readable and flexible interface so that I can glance at the chat during a lecture.
+
+As a student, I want to upload questions so that the lecturers can answer them.
+As a student I want to be able to see all other asked questions, and be able to upvote those, so that the lecturer can see how important a question is.
+As a student, I want to delete my questions so that I wouldn’t spam the site with questions I don’t need the answer to anymore.
+
+
+Should have:
+As a lecturer I want students to be able to send questions requests at least with a 30 seconds time interval between them.
+As a lecturer, I want to schedule my rooms in advance with a start and end time, so that I can prepare the lecture in advance.
+As a lecturer, I want to mark questions as answered, and it should be put into a separate ‘answered questions’ tab.
+As a lecturer, I want to export the list of (timestamped) answered questions, so that I can share this list together with the lecture. 
+As a lecturer, I want to invite moderators to the room with a different link and a password, so that they can control the questions.
+
+As a student, I want to let the lecturer know if the lecture is going too slow/fast.
+As a student, I want to see the questions that have already been answered, so that I won’t ask something that has already been answered.
+
+As a moderator, I want to ban disruptive students from the room, so the questions stay on topic.
+As a moderator, I want to delete questions, so that I can keep the questions clean and to the point.
+As a moderator I want to be able to edit questions, so that I can keep the questions clean and to the point.
+As a moderator, I want to mark questions as answered, and it should be put into a separate ‘answered questions’ tab.
+As a moderator, I want to answer questions as well, so that the lecturer is not bothered with easily answered questions.
+
+As the university, I want the possibility to host multiple rooms at the same time, so the application can be used by more lecturers at the same time.
+
+As an admin, I want to restore the server and the data in case of a crash (return where you left off), so no answered questions are lost.
+
+
+Could have:
+As a lecturer, I want to slow the chat down so that I can read the chat more clearly.
+As a lecturer, I want the priorities of the questions to be visually expressed (colour coding, bigger font etc.), so it is easier to see which questions are urgent.
+As a lecturer I want the chat to have some kind of basic spam controlfilter, so the chat stays on topic.
+As a lecturer, I want real-time updates for the students’ questions, so that I can answer questions straightaway without having to refresh.
+As a lecturer, I want to archive the list of answered questions, still accessible through the link, and still accessible for moderators to add answers.
+As a lecturer, I want to be able to create and close (multiple choice) polls, so that I can get feedback from the students. 
+
+As a student, I want to have a ‘getting started’ guide, so that it’s easier to use all the features right from the start.
+As a student, I want to have the option to readjust my interface so that it soothes my visual impairments.
+As a student, I want to send symbols to send the lecturer feedback ((dis)agree symbol, slow down symbol), so that the lecturer knows what I am thinking.
+
+As a moderator, I want to mute or temporarily ban students from the room, so the questions stay on topic.
+As a moderator I want to be able to merge questions that are similar, so that I can keep the questions clean and to the point.
+
+
+Wont have:
+As a lecturer, I want to set the maximum number of participants for a room, so the room can’t overload.
+As a lecturer, I want to have a list of all the deleted questions, and be able to un-delete them, so that I can reset a question that I think is important enough not to be deleted.
+
+As a moderator, I want to have a list of all the deleted questions, and be able to un-delete them, so that I can reset a question that I think is important enough not to be deleted.
+
+As a student, I want to edit my questions, so that I can rephrase my question if I phrased it poorly
